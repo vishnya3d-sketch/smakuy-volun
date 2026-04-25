@@ -30,10 +30,8 @@ function renderPlaces(places) {
   if (!grid) return;
 
   grid.innerHTML = places.map(place => `
-    <div class="place-card"
-         data-category="${normalizeCategory(place.category)}"
-         onclick="${place.link ? `location.href='${place.link}'` : ''}"
-         style="cursor: pointer;">
+      <div class="place-card"
+        data-category="${normalizeCategory(place.category)}">
 
       <img src="${place.image}" alt="${place.title}"
         onerror="this.src='https://placehold.co/400x240/5e8b69/ffffff?text=${encodeURIComponent(place.title)}'" />
