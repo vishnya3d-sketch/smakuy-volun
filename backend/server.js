@@ -38,7 +38,13 @@ app.use(express.static(pagesDir));
 // ПІДКЛЮЧЕННЯ ДО MYSQL
 // =====================
 
-const db = mysql.createConnection(process.env.MYSQL_URL);
+const db = mysql.createConnection({
+  host: process.env.MYSQLHOST || 'mysql.railway.internal',
+  user: process.env.MYSQLUSER || 'root',
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE || 'railway',
+  port: parseInt(process.env.MYSQLPORT) || 3306
+});
 
 db.connect((err) => {
   if (err) {
