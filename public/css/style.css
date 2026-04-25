@@ -481,6 +481,8 @@ nav #auth-links a.user-btn svg {
   .footer-grid {
     flex-direction: column;
     gap: 30px;
+    align-items: flex-start;
+    text-align: left;
   }
 } 
 
