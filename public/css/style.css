@@ -329,7 +329,7 @@ footer {
 }
 
 .footer-grid {
-  flex-direction: column;
+  display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -482,7 +482,7 @@ nav #auth-links a.user-btn svg {
     flex-direction: column;
     gap: 30px;
   }
-}
+} 
 
 @media (max-width: 480px) {
   .hero-content h1 {
