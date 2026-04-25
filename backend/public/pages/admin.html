@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Адмінка — Смакуй Волинь</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="admin-header">
+      <div>
+        <p class="eyebrow">Панель керування</p>
+        <h1>Адмінка — Смакуй Волинь</h1>
+        <p class="header-text">Керуй турами, закладами, маршрутами та бронюваннями в одному місці.</p>
+      </div>
+      <button class="logout-main-btn" id="logout-btn" type="button">Вийти</button>
+    </header>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Тури</span>
+        <strong id="stat-tours">—</strong>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Заклади</span>
+        <strong id="stat-places">—</strong>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Маршрути</span>
+        <strong id="stat-routes">—</strong>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Бронювання</span>
+        <strong id="stat-bookings">—</strong>
+      </div>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="tours">Тури</button>
+      <button class="tab-btn" data-tab="places">Заклади</button>
+      <button class="tab-btn" data-tab="routes">Маршрути</button>
+      <button class="tab-btn" data-tab="bookings">Бронювання</button>
+    </nav>
+
+    <div class="toast" id="toast"></div>
+
+    <div class="panel active" id="panel-tours">
+      <div class="panel-head">
+        <div>
+          <h2>Додати тур</h2>
+          <p>Заповни дані туру, який буде показаний на сайті.</p>
+        </div>
+      </div>
+
+      <form id="tour-form">
+        <div class="grid">
+          <div>
+            <label>Назва</label>
+            <input type="text" id="tour-title" required>
+          </div>
+          <div>
+            <label>Ціна</label>
+            <input type="number" id="tour-price" min="0" required>
+          </div>
+          <div>
+            <label>Зображення</label>
+            <input type="text" id="tour-image" placeholder="/img/tours-weekend.png">
+          </div>
+          <div>
+            <label>Посилання</label>
+            <input type="text" id="tour-link" placeholder="./tours/tour-weekend.html">
+          </div>
+          <div class="full">
+            <label>Опис</label>
+            <textarea id="tour-description" required></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Додати тур</button>
+        <div class="note" id="tour-note"></div>
+      </form>
+    </div>
+
+    <div class="panel" id="panel-places">
+      <div class="panel-head">
+        <div>
+          <h2>Додати заклад</h2>
+          <p>Додай ресторан, кафе, ферму або еко-локацію.</p>
+        </div>
+      </div>
+
+      <form id="place-form">
+        <div class="grid">
+          <div>
+            <label>Назва</label>
+            <input type="text" id="place-title" required>
+          </div>
+          <div>
+            <label>Категорія</label>
+            <select id="place-category" required>
+              <option value="Ресторан">Ресторан</option>
+              <option value="Кафе">Кафе</option>
+              <option value="Ферма">Ферма</option>
+              <option value="Еко">Еко</option>
+            </select>
+          </div>
+          <div>
+            <label>Зображення</label>
+            <input type="text" id="place-image" placeholder="/img/place-korona.jpg">
+          </div>
+          <div>
+            <label>Адреса</label>
+            <input type="text" id="place-address">
+          </div>
+          <div>
+            <label>Години</label>
+            <input type="text" id="place-hours" placeholder="10:00 — 22:00">
+          </div>
+          <div>
+            <label>Широта (lat)</label>
+            <input type="number" step="0.0000001" id="place-lat">
+          </div>
+          <div>
+            <label>Довгота (lng)</label>
+            <input type="number" step="0.0000001" id="place-lng">
+          </div>
+          <div class="full">
+            <label>Опис</label>
+            <textarea id="place-description" required></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Додати заклад</button>
+        <div class="note" id="place-note"></div>
+      </form>
+
+      <div class="list-header">
+        <h2>Список закладів</h2>
+        <input class="search-input" type="search" id="places-search" placeholder="Пошук закладу...">
+      </div>
+
+      <div id="places-list"></div>
+    </div>
+
+    <div class="panel" id="panel-routes">
+      <div class="panel-head">
+        <div>
+          <h2>Додати маршрут</h2>
+          <p>Маршрут може містити кілька точок з координатами.</p>
+        </div>
+      </div>
+
+      <form id="route-form">
+        <div class="grid">
+          <div>
+            <label>Назва</label>
+            <input type="text" id="route-title" required>
+          </div>
+          <div>
+            <label>Категорія</label>
+            <select id="route-category" required>
+              <option value="pishyi">Піший</option>
+              <option value="velo">Вело</option>
+              <option value="avto">Авто</option>
+            </select>
+          </div>
+          <div>
+            <label>Тривалість</label>
+            <input type="text" id="route-duration" placeholder="3 год">
+          </div>
+          <div>
+            <label>Дистанція</label>
+            <input type="text" id="route-distance" placeholder="5 км">
+          </div>
+          <div>
+            <label>Колір лінії</label>
+            <input type="text" id="route-color" placeholder="#2e7d32">
+          </div>
+          <div>
+            <label>Зображення</label>
+            <input type="text" id="route-image" placeholder="/img/route-castle.jpeg">
+          </div>
+          <div class="full">
+            <label>Опис</label>
+            <textarea id="route-description" required></textarea>
+          </div>
+        </div>
+
+        <div class="points-box">
+          <strong>Точки маршруту</strong>
+
+          <div id="points-container">
+            <div class="point-row">
+              <input type="text" placeholder="Назва точки" class="point-name">
+              <input type="number" step="0.0000001" placeholder="lat" class="point-lat">
+              <input type="number" step="0.0000001" placeholder="lng" class="point-lng">
+              <button type="button" class="remove-point-btn">Видалити</button>
+            </div>
+
+            <div class="point-row">
+              <input type="text" placeholder="Назва точки" class="point-name">
+              <input type="number" step="0.0000001" placeholder="lat" class="point-lat">
+              <input type="number" step="0.0000001" placeholder="lng" class="point-lng">
+              <button type="button" class="remove-point-btn">Видалити</button>
+            </div>
+          </div>
+
+          <button type="button" class="submit-btn secondary-btn" id="add-point-btn">+ Додати точку</button>
+        </div>
+
+        <button type="submit" class="submit-btn">Додати маршрут</button>
+        <div class="note" id="route-note"></div>
+      </form>
+    </div>
+
+    <div class="panel" id="panel-bookings">
+      <div class="list-header">
+        <div>
+          <h2>Бронювання турів</h2>
+          <p>Переглядай заявки, змінюй статус або видаляй непотрібні записи.</p>
+        </div>
+
+        <input class="search-input" type="search" id="bookings-search" placeholder="Пошук бронювання...">
+      </div>
+
+      <div id="bookings-list"></div>
+    </div>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

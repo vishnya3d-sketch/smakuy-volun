@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тури — Смакуй Волинь</title>
+
+  <!-- Шрифти -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Стилі -->
+  <link rel="stylesheet" href="/css/tours.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="nav">
+
+        <a href="/index.html" class="logo">
+          <img src="/img/logo.png" alt="Смакуй Волинь" onerror="this.style.display='none'" />
+          <div class="logo-text">
+          </div>
+        </a>
+
+        <nav>
+          <a href="/index.html">Головна</a>
+          <a href="/maintours.html" class="active">Тури</a>
+          <a href="/zaklady.html">Заклади</a>
+          <a href="/marshruty.html">Маршрути</a>
+          <a href="/kontakty.html">Контакти</a>
+          <div id="auth-links"></div>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Тури Волині</h1>
+      <p>Оберіть гастрономічний тур та вирушайте у смачну подорож!</p>
+    </div>
+  </section>
+
+  <!-- TOURS -->
+  <section class="tours">
+    <div class="container">
+
+      <!-- Сюди підвантажуються тури -->
+      <div class="cards-grid" id="cards-grid"></div>
+
+      <!-- Пагінація -->
+      <div class="pagination" id="pagination"></div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="/index.html" class="logo">
+              <img src="/img/logo.png" alt="Смакуй Волинь" class="footer-logo" onerror="this.style.display='none'" />
+            </a>
+          </div>
+
+          <div>
+            <h4>Навігація</h4>
+            <a href="/index.html">Головна</a>
+            <a href="/maintours.html">Тури</a>
+            <a href="/zaklady.html">Заклади</a>
+            <a href="/marshruty.html">Маршрути</a>
+            <a href="/kontakty.html">Контакти</a>
+          </div>
+
+          <div>
+            <h4>Наші соцмережі</h4>
+            <div class="social">
+              <a class="social-icon" href="https://x.com/?lang=uk_UA" target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+              <a class="social-icon" href="https://www.facebook.com/?locale=uk_UA" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+              <a class="social-icon" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram">◎</a>
+              <a class="social-icon" href="https://ua.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</div>
+
+<!-- JS -->
+<script src="/js/tours.js"></script>
+<script src="/js/auth-ui.js"></script>
+
+</body>
+</html>

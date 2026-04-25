@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Гастрономічний туризм Волині. Тури, ферми, медові маршрути.">
+  <meta name="keywords" content="Волинь, тури, гастрономічний туризм">
+  <meta name="author" content="Смакуй Волинь">
+  <title>Смакуй Волинь</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="nav">
+
+      <a href="index.html" class="logo">
+        <img src="/img/logo.png" alt="Смакуй Волинь" onerror="this.style.display='none'" />
+      </a>
+
+      <nav>
+        <a href="index.html" class="active">Головна</a>
+        <a href="maintours.html">Тури</a>
+        <a href="zaklady.html">Заклади</a>
+        <a href="marshruty.html">Маршрути</a>
+        <a href="kontakty.html">Контакти</a>
+        <div id="auth-links"></div>
+
+      </nav>
+
+    </div>
+  </div>
+</header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Смакуй Волинь</h1>
+          <p>Гастрономічний туризм серця Полісся</p>
+          <button onclick="location.href='/zaklady.html'">Заклади Волині</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOURS -->
+    <section class="tours container">
+      <h2>Популярні тури</h2>
+      <div class="cards">
+
+        <div class="card">
+          <img src="/img/tour1.png" alt="Тур 1">
+          <h3>Тур вихідного дня</h3>
+          <p>3 дні / дегустації</p>
+          <div class="card-footer">
+            <button onclick="location.href='/tours/tour-weekend.html'">Детальніше</button>
+            <span>від 2000 грн</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/img/tour2.png" alt="Тур 2">
+          <h3>Сирні ферми Волині</h3>
+          <p>1 день / дегустації</p>
+          <div class="card-footer">
+            <button onclick="location.href='/tours/tour-cheese.html'">Детальніше</button>
+            <span>від 800 грн</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/img/tour3.png" alt="Тур 3">
+          <h3>Медові маршрути</h3>
+          <p>3 дні / дегустації</p>
+          <div class="card-footer">
+            <button onclick="location.href='/tours/tour-honey.html'">Детальніше</button>
+            <span>від 1500 грн</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="why container">
+      <h2>Чому Волинь?</h2>
+      <div class="why-grid">
+
+        <div class="why-item">
+          <img src="/img/icon-food.png" class="why-icon">
+          <h3>Натуральні продукти</h3>
+          <p>Екологічно чисті продукти від місцевих фермерів.</p>
+        </div>
+
+        <div class="why-item">
+          <img src="/img/icon-chef.png" class="why-icon">
+          <h3>Автентична кухня</h3>
+          <p>Традиційні волинські страви з локальних інгредієнтів.</p>
+        </div>
+
+        <div class="why-item">
+          <img src="/img/icon-farmer.png" class="why-icon farmer">
+          <h3>Локальні фермери</h3>
+          <p>Можливість познайомитись з виробниками.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="/index.html" class="logo">
+              <img src="/img/logo.png" alt="Смакуй Волинь" class="footer-logo" onerror="this.style.display='none'" />
+            </a>
+          </div>
+
+          <div>
+            <h4>Навігація</h4>
+            <a href="/index.html">Головна</a>
+            <a href="/maintours.html">Тури</a>
+            <a href="/zaklady.html">Заклади</a>
+            <a href="/marshruty.html">Маршрути</a>
+            <a href="/kontakty.html">Контакти</a>
+          </div>
+
+          <div>
+            <h4>Наші соцмережі</h4>
+            <div class="social">
+              <a class="social-icon" href="https://x.com/?lang=uk_UA" target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+              <a class="social-icon" href="https://www.facebook.com/?locale=uk_UA" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+              <a class="social-icon" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram">◎</a>
+              <a class="social-icon" href="https://ua.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/auth-ui.js"></script>
+  </div>
+</body>
+</html>

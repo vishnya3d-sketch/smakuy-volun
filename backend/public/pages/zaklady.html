@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Заклади — Смакуй Волинь</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/zaklady.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a href="index.html" class="logo">
+          <img src="/img/logo.png" alt="Смакуй Волинь" onerror="this.style.display='none'" />
+          <div class="logo-text"></div>
+        </a>
+
+        <nav>
+          <a href="index.html">Головна</a>
+          <a href="maintours.html">Тури</a>
+          <a href="zaklady.html" class="active">Заклади</a>
+          <a href="marshruty.html">Маршрути</a>
+          <a href="kontakty.html">Контакти</a>
+          <div id="auth-links"></div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Заклади Волині</h1>
+      <p>Найкращі ресторани, кафе та ферми регіону</p>
+    </div>
+  </section>
+
+  <!-- ФІЛЬТР -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-btns">
+        <button class="filter-btn active" data-filter="all">Всі</button>
+        <button class="filter-btn" data-filter="restaurant">Ресторани</button>
+        <button class="filter-btn" data-filter="cafe">Кафе</button>
+        <button class="filter-btn" data-filter="farm">Ферми</button>
+        <button class="filter-btn" data-filter="eco">Еко</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАРТКИ (ДИНАМІЧНІ) -->
+  <section class="places-section">
+    <div class="container">
+      <div class="places-grid" id="places-grid"></div>
+    </div>
+  </section>
+
+  <!-- КАРТА -->
+  <section class="map-section">
+    <div class="container">
+      <h2>Заклади на карті</h2>
+      <div class="map-wrap">
+        <div id="map" style="height: 400px; width: 100%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="/index.html" class="logo">
+              <img src="/img/logo.png" alt="Смакуй Волинь" class="footer-logo" onerror="this.style.display='none'" />
+            </a>
+          </div>
+
+          <div>
+            <h4>Навігація</h4>
+            <a href="/index.html">Головна</a>
+            <a href="/maintours.html">Тури</a>
+            <a href="/zaklady.html">Заклади</a>
+            <a href="/marshruty.html">Маршрути</a>
+            <a href="/kontakty.html">Контакти</a>
+          </div>
+
+          <div>
+            <h4>Наші соцмережі</h4>
+            <div class="social">
+              <a class="social-icon" href="https://x.com/?lang=uk_UA" target="_blank" rel="noopener noreferrer" title="X">𝕏</a>
+              <a class="social-icon" href="https://www.facebook.com/?locale=uk_UA" target="_blank" rel="noopener noreferrer" title="Facebook">f</a>
+              <a class="social-icon" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram">◎</a>
+              <a class="social-icon" href="https://ua.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</div>
+
+<!-- JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/js/zaklady.js"></script>
+<script src="/js/auth-ui.js"></script>
+
+</body>
+</html>

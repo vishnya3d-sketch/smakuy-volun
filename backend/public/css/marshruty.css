@@ -1,0 +1,503 @@
+/* =====================
+   RESET & BASE
+   ===================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+  background: #e5e5e5;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 1px,
+    transparent 1px,
+    transparent 80px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+header, section, footer {
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* =====================
+   HEADER
+   ===================== */
+
+header {
+  background: #2e7d32;
+  border-bottom: 1px solid #256628;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 10px 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.logo img { height: 50px; }
+
+.logo-text span {
+  display: block;
+  font-size: 11px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+nav a.active {
+  background: white;
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+/* =====================
+   HERO
+   ===================== */
+
+.hero {
+  height: 280px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.35)),
+              url('../img/hero-marshruty.jpg') center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content { color: white; }
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content p {
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+/* =====================
+   ФІЛЬТР
+   ===================== */
+
+.filter-section {
+  padding: 30px 0 10px;
+}
+
+.filter-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 9px 22px;
+  border: 2px solid #2e7d32;
+  border-radius: 20px;
+  background: transparent;
+  color: #2e7d32;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #2e7d32;
+  color: white;
+}
+
+/* =====================
+   КАРТКИ МАРШРУТІВ
+   ===================== */
+
+.routes-section {
+  padding: 30px 0 50px;
+}
+
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.route-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.route-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.route-card.hidden {
+  display: none;
+}
+
+.route-card.active-route {
+  border: 2px solid #2e7d32;
+}
+
+.route-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.route-body {
+  padding: 16px 18px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.route-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.route-tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.route-tag.pishyi { background: #e8f5e9; color: #2e7d32; }
+.route-tag.velo   { background: #e3f2fd; color: #1565c0; }
+.route-tag.avto   { background: #fff3e0; color: #e65100; }
+.route-tag.duration { background: #f3e5f5; color: #7b1fa2; }
+.route-tag.distance { background: #fce4ec; color: #c62828; }
+
+.route-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #1b5e20;
+}
+
+.route-body p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Зупинки */
+.route-stops {
+  background: #f9faf9;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stop {
+  font-size: 13px;
+  color: #555;
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.stop:last-child { border-bottom: none; }
+
+/* Кнопки дій */
+.route-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn-map {
+  flex: 1;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-map:hover { background: #256628; }
+
+.btn-download {
+  background: transparent;
+  color: #2e7d32;
+  border: 2px solid #2e7d32;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+  white-space: nowrap;
+}
+
+.btn-download:hover {
+  background: #2e7d32;
+  color: white;
+}
+
+/* =====================
+   КАРТА
+   ===================== */
+
+.map-section {
+  padding: 20px 0 60px;
+}
+
+.map-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #1b5e20;
+  margin-bottom: 8px;
+}
+
+.map-hint {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.map-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+
+footer {
+  background: #2e7d32;
+  color: white;
+  padding: 50px 0;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-logo { height: 60px; }
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+footer h4 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+footer a {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 15px;
+  margin-bottom: 7px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.social {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s;
+  text-decoration: none;
+  color: white;
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.1);
+}
+
+/* =====================
+   AUTH LINKS
+   ===================== */
+
+#auth-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* прибираємо вплив nav a на іконку */
+nav #auth-links a.user-btn {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  transition: 0.25s;
+}
+
+nav #auth-links a.user-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+nav #auth-links a.user-btn svg {
+  width: 22pt;
+  height: 22pt;
+  box-sizing: border-box;
+}
+
+/* для текстових кнопок після логіну */
+#auth-links a:not(.user-btn) {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+#auth-links a:not(.user-btn):hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* =====================
+   MEDIA QUERIES
+   ===================== */
+
+@media (max-width: 900px) {
+  .routes-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav { flex-direction: column; gap: 10px; }
+  nav { flex-wrap: wrap; justify-content: center; }
+  .hero-content h1 { font-size: 32px; }
+  .filter-btns { justify-content: center; }
+  .footer-grid { flex-direction: column; gap: 30px; }
+}
+
+@media (max-width: 560px) {
+  .routes-grid { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 26px; }
+}
