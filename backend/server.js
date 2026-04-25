@@ -17,8 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 // ШЛЯХИ ДО ПАПОК
 // =====================
 
-const rootDir = path.join(__dirname, '..');
-const publicDir = path.join(rootDir, 'public');
+
+const publicDir = path.join(__dirname, 'public');
 
 const cssDir = path.join(publicDir, 'css');
 const jsDir = path.join(publicDir, 'js');
