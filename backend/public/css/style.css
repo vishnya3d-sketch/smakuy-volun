@@ -457,16 +457,14 @@ nav #auth-links a.user-btn svg {
 
 @media (max-width: 768px) {
   .nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
   }
 
   nav {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 4px;
   }
 
