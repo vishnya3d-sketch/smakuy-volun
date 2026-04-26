@@ -324,7 +324,6 @@ nav a:hover {
 footer {
   background: #2e7d32;
   color: white;
-  margin-top: 60px;
   padding: 50px 0;
 }
 
@@ -403,7 +402,6 @@ footer a:hover {
   gap: 6px;
 }
 
-/* прибираємо вплив nav a на іконку */
 nav #auth-links a.user-btn {
   all: unset;
   display: flex;
@@ -428,7 +426,6 @@ nav #auth-links a.user-btn svg {
   box-sizing: border-box;
 }
 
-/* для текстових кнопок після логіну */
 #auth-links a:not(.user-btn) {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.85);
@@ -449,34 +446,69 @@ nav #auth-links a.user-btn svg {
    MEDIA QUERIES
    ===================== */
 
-@media (max-width: 1024px) {
-  .hero h1 { font-size: 36px; }
-  .cards { gap: 20px; }
-  .card { width: 300px; }
-  .why-grid { gap: 20px; }
+@media (max-width: 900px) {
+  .tour-layout {
+    grid-template-columns: 1fr;
+  }
+  .tour-sidebar {
+    position: static;
+  }
 }
 
 @media (max-width: 768px) {
-  .nav { flex-direction: column; gap: 10px; }
-  nav { display: flex; flex-wrap: wrap; justify-content: center; }
-  nav a { margin: 5px; }
-  .hero { height: 420px; text-align: center; }
-  .hero-content { max-width: 100%; }
-  .hero h1 { font-size: 32px; }
-  .cards { flex-direction: column; align-items: center; }
-  .card { width: 90%; }
-  .why-grid { flex-direction: column; align-items: center; }
-  .why-item { width: 90%; }
-  .footer-grid { flex-direction: column; gap: 30px; text-align: center; }
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  #auth-links {
-    justify-content: center;
+  nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .includes {
+    flex-direction: column;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer-grid > div {
+    text-align: left;
+    width: 100%;
+  }
+
+  .footer-grid h4 {
+    text-align: left;
+  }
+
+  .footer-grid .social {
+    justify-content: flex-start;
   }
 }
 
 @media (max-width: 480px) {
-  .hero h1 { font-size: 26px; }
-  .hero p { font-size: 16px; }
-  .hero button { padding: 12px 20px; }
-  .tours h2, .why h2 { font-size: 26px; }
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .gallery-main {
+    height: 240px;
+  }
+
+  .gallery-thumbs img {
+    height: 80px;
+  }
 }
