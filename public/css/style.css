@@ -402,7 +402,6 @@ footer a:hover {
   gap: 6px;
 }
 
-/* прибираємо вплив nav a на іконку */
 nav #auth-links a.user-btn {
   all: unset;
   display: flex;
@@ -427,7 +426,6 @@ nav #auth-links a.user-btn svg {
   box-sizing: border-box;
 }
 
-/* для текстових кнопок після логіну */
 #auth-links a:not(.user-btn) {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.85);
@@ -444,15 +442,6 @@ nav #auth-links a.user-btn svg {
   background: rgba(255, 255, 255, 0.2);
 }
 
-footer {
-  text-align: left;
-}
-
-.footer-grid {
-  text-align: left;
-  align-items: flex-start;
-}
-
 /* =====================
    MEDIA QUERIES
    ===================== */
@@ -461,7 +450,6 @@ footer {
   .tour-layout {
     grid-template-columns: 1fr;
   }
-
   .tour-sidebar {
     position: static;
   }
@@ -469,13 +457,17 @@ footer {
 
 @media (max-width: 768px) {
   .nav {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   nav {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 4px;
   }
 
   .hero-content h1 {
@@ -488,9 +480,22 @@ footer {
 
   .footer-grid {
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
     align-items: flex-start;
     text-align: left;
+  }
+
+  .footer-grid > div {
+    text-align: left;
+    width: 100%;
+  }
+
+  .footer-grid h4 {
+    text-align: left;
+  }
+
+  .footer-grid .social {
+    justify-content: flex-start;
   }
 }
 
