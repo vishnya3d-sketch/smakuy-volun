@@ -444,6 +444,15 @@ nav #auth-links a.user-btn svg {
   background: rgba(255, 255, 255, 0.2);
 }
 
+footer {
+  text-align: left;
+}
+
+.footer-grid {
+  text-align: left;
+  align-items: flex-start;
+}
+
 /* =====================
    MEDIA QUERIES
    ===================== */
