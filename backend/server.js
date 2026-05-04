@@ -38,7 +38,7 @@ app.use(express.static(pagesDir));
 // ПІДКЛЮЧЕННЯ ДО MYSQL
 // =====================
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: process.env.MYSQLHOST || 'mysql.railway.internal',
   user: process.env.MYSQLUSER || 'root',
   password: process.env.MYSQLPASSWORD,
