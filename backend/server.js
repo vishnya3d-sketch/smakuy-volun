@@ -46,7 +46,7 @@ const db = mysql.createPool({
   port: parseInt(process.env.MYSQLPORT) || 3306
 });
 
-db.connect((err) => {
+db.getConnection((err) => {
   if (err) {
     console.error('Помилка підключення до БД:', err.message);
     return;
